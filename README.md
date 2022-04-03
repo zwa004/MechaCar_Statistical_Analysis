@@ -51,5 +51,6 @@ Lots 1 and 2 fall under acceptable PSI variance parameters, but Lot 3 has a vari
 ### Summary
 For the T-test across all manufacturing lots, the p-value is above the significance value. This means we cannot rule out that randomness is affecting our test results. The same result applies to Lots 1 and 2 given that their p-values are 1 and 0.6072, respectively. Lot 3 falls below 0.5 signifcance value with a p-value of 0.04168, which means that Lot 3's testing is the only sample that can be explained outside of random results. 
 
-##
+## Study Design MechaCar vs Competition
+MechaCar can compare itself to its competition by cost to purchase and safety rating of its vehicle. I hypothesize that MechaCar's Average MSRP will remain unchanged vs. the average safety rating of its entire vehicle lineup. The alternative being that average price increases as average safety rating increases. In order to test this, we will need to average the MSRP of each of its vehicles (accounting for variance in trim level) as well as the saftey rating for each vehicle. From there, we will apply a linear regression to the MSRP avg vs safety rating. 
 
