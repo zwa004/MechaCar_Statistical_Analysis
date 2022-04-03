@@ -1,0 +1,31 @@
+# D1
+
+MechaCar_mpg_df <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F) #import csv
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data = MechaCar_mpg_df)) #summary of multiple linear regression vs mpg 
+
+# intercept, vheicle length, and ground clearance have a statistically large impact on fuel efficiency 
+
+# D2 Group the lots and summarize them
+
+susp <- read.csv(file='Suspension_Coil.csv',check.names=F,stringsAsFactors = F) #import csv
+> View(susp)
+> library(tidyverse)
+> summarize_susp <- susp %>% group_by(Manufacturing_Lot)
+> View(summarize_susp)
+> View(summarize_susp)
+> total_summary <- susp %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), .groups = 'keep') 
+> View(total_summary)
+> total_summary <- susp %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI), .groups = 'keep') #summarize PSI
+> lot_summary <- susp %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI), .groups = 'keep') #summarize PSI by lot  
+> View(lot_summary)
+
+# D3 T-Test
+
+t.test(susp$PSI, mu=1500)
+
+t.test(subset(susp, Manufacturing_Lot == "Lot1")$PSI, mu=1500)
+
+t.test(subset(susp, Manufacturing_Lot == "Lot2")$PSI, mu=1500)
+
+t.test(subset(susp, Manufacturing_Lot == "Lot3")$PSI, mu=1500)
+
